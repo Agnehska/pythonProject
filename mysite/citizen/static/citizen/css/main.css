@@ -1,0 +1,76 @@
+.td_img{
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-left:10px;
+}
+.td_img img{
+    width: 100%;
+    height: 100%;
+}
+form{
+    width: 50%;
+}
+
+.age{
+    display: none;
+}
+
+.intro{
+    padding: 70px 0;
+}
+.intro__wrap{
+    display: flex;
+}
+.intro__img{
+    width:140px;
+    height:140px;
+    margin: 0 30px 0 0;
+}
+.intro__img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.intro__name{
+    margin: 0 0 20px 0;
+}
+.intro__text span{
+    font-weight: 800;
+}
+.education{
+}
+
+.education__block{}
+.education__item{
+    margin: 0 0 20px 0;
+}
+.education__title{
+    text-transform: uppercase;
+    position: relative;
+    padding: 0 0 0 30px;
+    cursor: pointer;
+}
+.education__title:before, .education__title:after{
+    content:'';
+    width: 10px;
+    height: 1px;
+    background-color: #000;
+    position: absolute;
+    top: 15px;
+}
+.education__title:before{
+    transform: rotate(40deg);
+    left: 0;
+}
+.education__title:after{
+    transform: rotate(-40deg);
+    left: 7px;
+}
+.education__texts{
+    display: none;
+    padding: 10px 0 0 0;
+}
+.education__text span{
+    font-weight: 800;
+}

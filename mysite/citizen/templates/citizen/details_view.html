@@ -1,0 +1,15 @@
+{% extends 'citizen/layout.html' %}
+{% load static %}
+{% block title %}{{ man.name }}{% endblock %}
+
+{% block content %}
+   <div class="container">
+       <h2 class="mb-3">ИМЯ: {{ man.name }}</h2>
+       <p class="mb-3">ВОЗРАСТ: {{ man.age }} </p>
+       <p class="mb-3">СТАТУС: {{ man.status}} </p>
+       <p class="mb-3">ХОЗЯИН: {{ man.master}} </p>
+        <p class="mb-3">ДОХОД: {{ man.status.earn}} </p>
+       <a href="{% url 'delete' man.id %}" class="btn btn-danger"> Удалить </a>
+       <a href="{% url 'update' man.id %}" class="btn btn-info"> Редактировать </a>
+    </div>
+{% endblock %}

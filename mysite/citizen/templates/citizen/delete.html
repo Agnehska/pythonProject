@@ -1,0 +1,13 @@
+{% extends 'citizen/layout.html' %}
+{% load static %}
+{% block title %}Удалить{% endblock %}
+
+{% block content %}
+   <div class="container">
+      <h2 class="mb-3">Удалить жителя</h2>
+       <form method="post">
+           {% csrf_token %}
+           <button class="btn btn-success" type="submit">Удалить</button>
+       </form>
+    </div>
+{% endblock %}

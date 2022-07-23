@@ -1,0 +1,18 @@
+{% extends 'citizen/layout.html' %}
+{% load static %}
+{% block title %}Изменить{% endblock %}
+
+{% block content %}
+   <div class="container">
+      <h2 class="mb-3">Изменить данные жителя</h2>
+       <form method="post">
+           {% csrf_token %}
+           {{ form.name }}
+           {{ form.age }}
+           {{ form.master }}
+           {{ form.status }}
+           <span>{{ error }}</span>
+           <button class="btn btn-success" type="submit">Обновить</button>
+       </form>
+    </div>
+{% endblock %}

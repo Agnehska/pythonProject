@@ -1,0 +1,47 @@
+{% extends 'citizen/layout.html' %}
+{% load static %}
+{% block title %}Горожане{% endblock %}
+
+{% block content %}
+   <div class="container">
+       {% if request.user.is_authenticated %}
+          <h2 class="mb-3">Таблица жителей</h2>
+          <a href="{% url 'create' %}" class="td_img"><img src="{% static 'citizen/img/add.png' %}" alt="Edit"></a>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Фамилия Имя</th>
+                <th>Возраст</th>
+                <th>Социальный статус</th>
+                <th>Доход</th>
+                <th>Хозяин</th>
+                <th>Подчиненные</th>
+                  <th>About</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for man in people|dictsort:"age" %}
+
+              <tr>
+                  <td>{{ man.name }}</td>
+                  <td>{{ man.age }}</td>
+                  <td>{{ man.status }}</td>
+                  <td>{{ man.status.earn }}</td>
+                  <td>{{ man.master }}</td>
+                  <td>
+                    {% for item in people %}
+                      {% if item.master == man.name %}
+                        <p>{{ item.name }}</p>
+                      {% endif %}
+                    {% endfor %}
+                  </td>
+                  <td><a href="{% url 'show' man.id %}" class="td_img"><img src="{% static 'citizen/img/about.png' %}" alt="About"></a></td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        {% else %}
+        <h1> Авторизуйтесь, чтобы увидеть страницу </h1>
+        {% endif %}
+   </div>
+{% endblock %}
